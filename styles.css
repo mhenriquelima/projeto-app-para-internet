@@ -73,7 +73,16 @@ footer {
 }
 
 .btn:hover { 
-    background: #0266c0; 
+    background: #ffd503; 
+}
+
+.email-link {
+    color: #ffd503;
+    text-decoration: none;
+}
+
+.email-link:hover {
+    text-decoration: underline;
 }
 
 html, body {
