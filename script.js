@@ -23,7 +23,7 @@ function updateContent(section) {
                 Telefone: (11) 1234-5678<br>
                 E-mail: <a class="email-link" href="mailto:contato@onocontabil.com.br">contato@onocontabil.com.br</a>
             </p>
-            <a class="btn" href="mailto:contato@onocontabil.com.br">Solicitar Orçamento</a>
+            <a class="btn" href="forms.html">Solicitar Orçamento</a>
         `
     };
     document.getElementById("container").innerHTML = content[section];
