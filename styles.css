@@ -30,7 +30,15 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px; font-weight: bold; 
+    margin: 0 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #ffd503;
+    cursor: pointer;
 }
 
 .container {
