@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f5f5f5; margin: 0;
+    background: #505050; margin: 0;
 }
 
 header { 
@@ -45,9 +45,11 @@ nav a:hover {
     max-width: 900px;
     margin: 40px auto; 
     padding: 20px; 
-    background: white; 
+    background: #353535; 
     border-radius: 8px; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    color:white;
+    height: 200px;
 }
 
 h1, h2 {
@@ -60,12 +62,16 @@ footer {
     text-align: center; 
     padding: 20px 0; 
     margin-top: 40px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .btn { 
     display: inline-block; 
     padding: 10px 22px; 
-    background: #353535; 
+    background: #505050; 
     color: #fff; 
     border-radius: 5px; 
     text-decoration: none; 
@@ -73,7 +79,16 @@ footer {
 }
 
 .btn:hover { 
-    background: #0266c0; 
+    background: #ffd503; 
+}
+
+.email-link {
+    color: #ffd503;
+    text-decoration: none;
+}
+
+.email-link:hover {
+    text-decoration: underline;
 }
 
 html, body {

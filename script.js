@@ -21,7 +21,7 @@ function updateContent(section) {
             <p>
                 Endereço: Rua Exemplo, 123 - Centro, São Paulo/SP<br>
                 Telefone: (11) 1234-5678<br>
-                E-mail: <a href="mailto:contato@onocontabil.com.br">contato@onocontabil.com.br</a>
+                E-mail: <a class="email-link" href="mailto:contato@onocontabil.com.br">contato@onocontabil.com.br</a>
             </p>
             <a class="btn" href="mailto:contato@onocontabil.com.br">Solicitar Orçamento</a>
         `
