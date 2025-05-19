@@ -75,3 +75,8 @@ footer {
 .btn:hover { 
     background: #0266c0; 
 }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
