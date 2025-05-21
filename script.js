@@ -26,5 +26,42 @@ function updateContent(section) {
             <a class="btn" href="forms.html">Solicitar Orçamento</a>
         `
     };
-    document.getElementById("container").innerHTML = content[section];
+
+    if (!window.lastSection) window.lastSection = null;
+
+    if (window.lastSection === section) {
+        document.getElementById("container").innerHTML = `
+            <h2>Bem-vindo à Ono Contábil</h2>
+            <p>
+                Soluções contábeis que impulsionam o seu negócio. Na Ono Contábil, unimos conhecimento técnico, tecnologia e atendimento personalizado para oferecer serviços contábeis completos e confiáveis. Atuamos com foco em pequenas e médias empresas, empreendedores e profissionais autônomos que buscam mais do que apenas cumprir obrigações fiscais — querem crescer com segurança e inteligência. Aqui, você encontra suporte em todas as etapas do seu negócio: abertura de empresa, gestão tributária, contabilidade digital, folha de pagamento, planejamento financeiro e muito mais. Nossa missão é simplificar a sua rotina, garantir conformidade com a legislação e ajudar você a tomar decisões estratégicas com base em dados claros e precisos. Conte com uma equipe acessível, experiente e sempre pronta para atender.
+            </p>
+            <p><strong>Ono Contábil: a parceria que o seu negócio precisa para ir além.</strong></p>
+        `;
+        window.lastSection = null;
+    } else {
+        document.getElementById("container").innerHTML = content[section];
+        window.lastSection = section;
+    }
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('nav a');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const secao = this.dataset.section;
+            if (!secao) return;
+
+            updateContent(secao);
+
+            if (window.lastSection === null) {
+                links.forEach(l => l.classList.remove('active'));
+            } else {
+                links.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            }
+        });
+    });
+});
