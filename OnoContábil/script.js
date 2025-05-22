@@ -19,16 +19,16 @@ function updateContent(section) {
         contato: `
             <h2>Fale Conosco</h2>
             <p>
-                Endereço: Rua Exemplo, 123 - Centro, São Paulo/SP<br>
-                Telefone: (11) 1234-5678<br>
-                E-mail: <a class="email-link" href="mailto:contato@onocontabil.com.br">contato@onocontabil.com.br</a>
+                Endereço: Rua Epitácio Pessoa, 123 - Bairro dos Estados, JoãoPessoa/PB<br>
+                Telefone: (83) 99683-1152<br>
+                E-mail: <a class="email-link" href="mailto:elineono@hotmail.com">elineono@hotmail.com</a>
             </p>
             <a class="btn" href="forms.html">Solicitar Orçamento</a>
         `,
         parcerias: `
             <h2>Lojas Parceiras</h2>
             <p>
-                <a href="https://temdetudobrasil.com/" style="text-decoration: none;">
+                <a href="http://127.0.0.1:5501/TemQuaseTudo/html.html" style="text-decoration: none;">
                     <img src="imgs/TDTlogo.jpg" width="200px" alt="Loja tem de tudo" style="border:
             none; cursor: pointer;">
             `
