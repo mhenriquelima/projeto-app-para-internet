@@ -29,7 +29,7 @@
     }
 
     input[type="text"], input[type="password"] {
-      width: 100%;
+      width: 93%;
       padding: 10px;
       margin-bottom: 10px;
       border: 1px solid #ccc;
@@ -39,7 +39,7 @@
     input[type="submit"] {
       width: 100%;
       padding: 10px;
-      background-color: #4CAF50;
+      background-color: #f56e00;
       color: white;
       border: none;
       border-radius: 4px;
@@ -47,7 +47,7 @@
     }
 
     input[type="submit"]:hover {
-      background-color: #45a049;
+      background-color: hsl(0, 0%, 0%);
     }
 
     .error-message {
@@ -96,19 +96,12 @@
       if (username === usuarioCorreto && password === senhaCorreta) {
         document.getElementById('successMessage').style.display = 'block';
         document.getElementById('errorMessage').style.display = 'none';
+        setTimeout(function() {
+          window.location.href = 'html2.html'; // Redireciona após 1 segundo
+        }, 1000);
       } else {
         document.getElementById('errorMessage').style.display = 'block';
         document.getElementById('successMessage').style.display = 'none';
       }
     });
-    if (username === usuarioCorreto && password === senhaCorreta) {
-  document.getElementById('successMessage').style.display = 'block';
-  document.getElementById('errorMessage').style.display = 'none';
-  setTimeout(function() {
-    window.location.href = 'html2.html'; // Redireciona após 1 segundo
-  }, 1000);
-} else {
-  document.getElementById('errorMessage').style.display = 'block';
-  document.getElementById('successMessage').style.display = 'none';
-}
   </script>
