@@ -1,3 +1,4 @@
+window.addEventListener('DOMContentLoaded', () => {
 document.getElementById('loginForm').addEventListener('submit', function(event) {
       event.preventDefault();
 
@@ -14,10 +15,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         document.getElementById('successMessage').style.display = 'block';
         document.getElementById('errorMessage').style.display = 'none';
         setTimeout(function() {
-          window.location.href = 'html2.html'; // Redireciona após 1 segundo
+          window.location.href = './html2.html'; // Redireciona após 1 segundo
         }, 1000);
       } else {
         document.getElementById('errorMessage').style.display = 'block';
         document.getElementById('successMessage').style.display = 'none';
       }
     });
+});
