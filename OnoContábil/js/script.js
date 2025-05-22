@@ -29,8 +29,14 @@ function updateContent(section) {
             <h2>Lojas Parceiras</h2>
             <p>
                 <a href="http://127.0.0.1:5501/TemQuaseTudo/html.html" style="text-decoration: none;">
-                    <img src="imgs/TQTlogo.jpg" width="200px" alt="Loja tem de tudo" style="border:
-            none; cursor: pointer;">
+                    <img src="../TemQuaseTudo/imgs/TQTlogo.jpg" alt="Tem Quase Tudo logo" width="200px" style="border:
+            none; cursor: pointer;"></a><br>
+            </p>
+            <p>
+                <a href="http://127.0.0.1:5501/TemQuaseTudo/html.html" style="text-decoration: none;">
+                    <img src="../OnoContábil/imgs/Fulanologo.jpg" alt="Fulano Academia" width="200px" style="border:
+            none; cursor: pointer;"></a><br>
+            </p>
             `
     };
 
