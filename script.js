@@ -24,7 +24,14 @@ function updateContent(section) {
                 E-mail: <a class="email-link" href="mailto:contato@onocontabil.com.br">contato@onocontabil.com.br</a>
             </p>
             <a class="btn" href="forms.html">Solicitar Orçamento</a>
-        `
+        `,
+        parcerias: `
+            <h2>Lojas Parceiras</h2>
+            <p>
+                <a href="https://temdetudobrasil.com/" style="text-decoration: none;">
+                    <img src="imgs/TDTlogo.jpg" width="200px" alt="Loja tem de tudo" style="border:
+            none; cursor: pointer;">
+            `
     };
 
     if (!window.lastSection) window.lastSection = null;
