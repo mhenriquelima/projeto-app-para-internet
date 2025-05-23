@@ -9,9 +9,8 @@
 </head>
 <body>
     <header>
-        <img class='logoOC' src="imgs/logoOC.jpg" height="100px" width="100px" align="left" style="margin-right: 30px;">
-        <h1>Ono Contábil</h1>
-        <p>Soluções contábeis para o seu negócio crescer com segurança</p>
+        <img class='logoOCform' src="imgs/logoOC.jpg" height="100px" width="100px" align="left" style="margin-right: 30px;">
+        <p class="subtituloforms">Soluções contábeis para o seu negócio crescer com segurança</p>
     </header>
     <div class="form-container">
         <h1>Solicitação de Orçamento</h1>
@@ -23,14 +22,14 @@
             <input type="email" id="email" name="email" required><br><br>
 
             <label for="telefone">Telefone:</label><br>
-            <input type="tel" id="telefone" name="telefone"><br><br>
+            <input type="tel" id="telefone" name="telefone" required placeholder="Apenas números"><br><br>
 
             <label for="empresa">Empresa:</label><br>
             <input type="text" id="empresa" name="empresa"><br><br>
 
             <label for="servico">Serviço desejado:</label><br>
             <select id="servico" name="servico" required>
-                <option value="">Selecione</option>
+                <option value="" disabled selected>Selecione um serviço</option>
                 <option value="consultoria">Consultoria</option>
                 <option value="desenvolvimento">Desenvolvimento</option>
                 <option value="suporte">Suporte</option>
@@ -40,10 +39,10 @@
             <label for="detalhes">Detalhes do pedido:</label><br>
             <textarea id="detalhes" name="detalhes" rows="4" cols="40" required></textarea><br><br>
 
-            <input type="submit" value="Enviar Solicitação">
+            <button type="submit">Enviar Solicitação</button>
         </form>
     </div>
-    <footer>
+    <footer class="footerforms">
         &copy; 2025 Ono Contábil. Todos os direitos reservados.
     </footer>
 </body>

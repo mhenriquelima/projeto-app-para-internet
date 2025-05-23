@@ -1,7 +1,7 @@
 function updateContent(section) {
     const content = {
         sobre: `
-            <h2>Sobre a Ono Contábil</h2>
+            <h2>Sobre a Ono Contadores</h2>
             <p>
                 Com mais de 20 anos de experiência no mercado, a <strong>Ono Contábil</strong> oferece serviços especializados em contabilidade, fiscal, tributário e recursos humanos para empresas de todos os portes. Nosso compromisso é proporcionar tranquilidade, transparência e excelência no atendimento aos nossos clientes.
             </p>
@@ -18,21 +18,21 @@ function updateContent(section) {
         `,
         contato: `
             <h2>Fale Conosco</h2>
-            <p>
-                Endereço: Rua Epitácio Pessoa, 123 - Bairro dos Estados, JoãoPessoa/PB<br>
-                Telefone: (83) 99683-1152<br>
+            <p class="contato">
+                Endereço: Rua Epitácio Pessoa, 123 - Bairro dos Estados, JoãoPessoa/PB<br><br>
+                Telefone: (83) 99683-1152<br><br>
                 E-mail: <a class="email-link" href="mailto:elineono@hotmail.com">elineono@hotmail.com</a>
             </p>
             <a class="btn" href="forms.html">Solicitar Orçamento</a>
         `,
         parcerias: `
             <h2>Lojas Parceiras</h2>
-            <p>
+            <p class="parceria1">
                 <a href="http://127.0.0.1:5501/TemQuaseTudo/html.html" style="text-decoration: none;">
                     <img src="../TemQuaseTudo/imgs/TQTlogo.jpg" alt="Tem Quase Tudo logo" width="200px" style="border:
             none; cursor: pointer;"></a><br>
             </p>
-            <p>
+            <p class="parceria2">
                 <a href="http://127.0.0.1:5501/TemQuaseTudo/html.html" style="text-decoration: none;">
                     <img src="../OnoContábil/imgs/Fulanologo.jpg" alt="Fulano Academia" width="200px" style="border:
             none; cursor: pointer;"></a><br>
