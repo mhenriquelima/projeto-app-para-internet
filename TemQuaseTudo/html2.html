@@ -59,13 +59,50 @@
 
   <aside>
     <div id="carrinho">
-      <strong>Carrinho:</strong>
-      <ul id="carrinho-lista"></ul>
-    </div>
+  <button id="carrinho-botao" style="background: none; border: none; cursor: pointer; font-size: 1.5em; display: flex; align-items: center; margin-bottom: 10px;">
+    <span style="font-size: 2em; margin-right: 8px;">🛒</span>
+    <strong>Carrinho</strong>
+  </button>
+  <ul id="carrinho-lista" style="list-style: none; padding: 0; margin: 0;"></ul>
+</div>
+<script>
+  document.getElementById('carrinho-botao').onclick = function() {
+    window.location.href = "carrinho.html";
+  };
+
+  function adicionarCarrinho(event, produtoNome) {
+    event.stopPropagation(); // Evita seleção ao clicar no botão
+    const lista = document.getElementById('carrinho-lista');
+
+    // Verifica se o produto já está no carrinho
+    let jaAdicionado = false;
+    for (let item of lista.children) {
+      if (item.dataset.nome === produtoNome) {
+        jaAdicionado = true;
+        break;
+      }
+    }
+    if (jaAdicionado) return;
+
+    const item = document.createElement('li');
+    item.textContent = produtoNome;
+    item.dataset.nome = produtoNome;
+
+    const botaoRemover = document.createElement('button');
+    botaoRemover.textContent = 'Remover';
+    botaoRemover.className = 'botao-remover';
+    botaoRemover.onclick = function () {
+      lista.removeChild(item);
+    };
+
+    item.appendChild(botaoRemover);
+    lista.appendChild(item);
+  }
+</script>
 
       <main>
     <section>
-      <input type="text" placeholder="barra de pesquisa">
+      <input type="text" placeholder="Barra de pesquisa">
       <button>🔍</button>
     </section>
 
@@ -73,24 +110,31 @@
   </aside>
 
     <section>
-      <h2>Produtos:</h2>
-      <div class="produto" onclick="selecionarProduto(this)" data-nome="Produto 1">
-        Produto 1
-        <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 1')">🟩</button>
-      </div>
-      <div class="produto" onclick="selecionarProduto(this)" data-nome="Produto 2">
-        Produto 2
-        <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 2')">🟩</button>
-      </div>
-      <div class="produto" onclick="selecionarProduto(this)" data-nome="Produto 3">
-        Produto 3
-        <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 3')">🟩</button>
-      </div>
-      <div class="produto" onclick="selecionarProduto(this)" data-nome="Produto 4">
-        Produto 4
-        <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 4')">🟩</button>
-      </div>
-    </section>
+  <h2>Produtos:</h2>
+  <div class="produto" onclick="irParaProduto(event, 'produtos/produto1.html')" data-nome="Produto 1">
+    Coxinha da Salgateria Andrade - R$ 2,50
+    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 1')">🟩</button>
+  </div>
+  <div class="produto" onclick="irParaProduto(event, 'produtos/produto2.html')" data-nome="Produto 2">
+    PC Gamer Aorus - R$ 2,00
+    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 2')">🟩</button>
+  </div>
+  <div class="produto" onclick="irParaProduto(event, 'produtos/produto3.html')" data-nome="Produto 3">
+    Produto 3
+    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 3')">🟩</button>
+  </div>
+  <div class="produto" onclick="irParaProduto(event, 'produtos/produto4.html')" data-nome="Produto 4">
+    Produto 4
+    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 4')">🟩</button>
+  </div>
+</section>
+<script>
+  function irParaProduto(event, url) {
+    // Evita redirecionar se clicar no botão de adicionar
+    if (event.target.classList.contains('botao-adicionar')) return;
+    window.location.href = url;
+  }
+</script>
   </main>
 
   <aside>
