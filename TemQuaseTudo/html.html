@@ -1,20 +1,170 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Inicial</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>TemQuaseTudo</title>
+  <style>
+    .produto {
+      border: 1px solid #000;
+      padding: 10px;
+      margin: 5px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .selecionado {
+      background-color: #eef;
+    }
+
+    .botao-adicionar {
+      background-color: #0f0;
+      border: none;
+      padding: 5px;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+
+    .ad-button {
+      display: block;
+      margin: 10px;
+      padding: 10px;
+      background-color: #ff0;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid #000;
+      color: #000;
+      font-weight: bold;
+    }
+
+    #carrinho {
+      margin-top: 20px;
+      border: 1px solid #000;
+      padding: 10px;
+    }
+
+    .botao-remover {
+      background-color: #f66;
+      border: none;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="imgs/TQTlogo.jpg" width="200px" alt="Loja tem de tudo" style="border: none; cursor: pointer;">
-        <h1>Tem Quase Tudo</h1>
-        <p>Tem quase tudo na tem quase tudo</p>
-    </header>
-        <a class="btn" href="login.html">Faça Login</a>
+  <header>
+    <h1>TemQuaseTudo</h1>
+    <p>imagem aleatória de produtos random</p>
+    <div>Ícone de usuário</div>
+  </header>
+
+  <aside>
+<a href="login.html">
+    <div id="carrinho">
+  <button id="carrinho-botao" style="background: none; border: none; cursor: pointer; font-size: 1.5em; display: flex; align-items: center; margin-bottom: 10px;">
+    <span style="font-size: 2em; margin-right: 8px;">🛒</span>
+    <strong>Carrinho</strong>
+  </button>
+  <ul id="carrinho-lista" style="list-style: none; padding: 0; margin: 0;"></ul>
+</div>
+<script>
+  document.getElementById('carrinho-botao').onclick = function() {
+    window.location.href = "carrinho.html";
+  };
+
+  function adicionarCarrinho(event, produtoNome) {
+    event.stopPropagation(); // Evita seleção ao clicar no botão
+    const lista = document.getElementById('carrinho-lista');
+
+    // Verifica se o produto já está no carrinho
+    let jaAdicionado = false;
+    for (let item of lista.children) {
+      if (item.dataset.nome === produtoNome) {
+        jaAdicionado = true;
+        break;
+      }
+    }
+    if (jaAdicionado) return;
+
+    const item = document.createElement('li');
+    item.textContent = produtoNome;
+    item.dataset.nome = produtoNome;
+
+    const botaoRemover = document.createElement('button');
+    botaoRemover.textContent = 'Remover';
+    botaoRemover.className = 'botao-remover';
+    botaoRemover.onclick = function () {
+      lista.removeChild(item);
+    };
+
+    item.appendChild(botaoRemover);
+    lista.appendChild(item);
+  }
+</script>
+
+      <main>
+    <section>
+      <input type="text" placeholder="barra de pesquisa">
+      <button>🔍</button>
+    </section>
+    
+    <a class="btn" href="login.html">Faça Login</a>
+
+    <a class="ad-button" href="http://127.0.0.1:5501/OnoContábil/html.html" target="_blank">Ad Ono Contábil</a>
+  </aside>
+</a>
+    <section>
+      <h2>Produtos:</h2>
+      <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="Produto 1">
+    Produto 1
+    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 1')">🟩</button>
+  </div>
+  <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="Produto 2">
+    Produto 2
+    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 2')">🟩</button>
+  </div>
+  <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="Produto 3">
+    Produto 3
+    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 3')">🟩</button>
+  </div>
+  <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="Produto 4">
+    Produto 4
+    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 4')">🟩</button>
+  </div>
+</section>
+<script>
+  function irParaProduto(event, url) {
+    // Evita redirecionar se clicar no botão de adicionar
+    if (event.target.classList.contains('botao-adicionar')) return;
+    window.location.href = url;
+  }
+</script>
+  </main>
+  <aside>
+    <a class="ad-button" href="https://academiafulano.exemplo" target="_blank">Ad Fulano Academia</a>
+  </aside>
+
+  <script>
+    function selecionarProduto(elemento) {
+      elemento.classList.toggle('selecionado');
+    }
+
+    function adicionarCarrinho(event, produtoNome) {
+      event.stopPropagation(); // Evita seleção ao clicar no botão
+      const lista = document.getElementById('carrinho-lista');
+
+      const item = document.createElement('li');
+      item.textContent = produtoNome;
+
+      const botaoRemover = document.createElement('button');
+      botaoRemover.textContent = 'Remover';
+      botaoRemover.className = 'botao-remover';
+      botaoRemover.onclick = function () {
+        lista.removeChild(item);
+      };
+
+      item.appendChild(botaoRemover);
+      lista.appendChild(item);
+    }
+  </script>
 </body>
 </html>
-
-<!--adicionar icone de não estar logado com conta + carrinho de compras + itens + (TUDO QUE A PESSOA APERTAR VAI REDIRECIONAR PRO LOGIN)-->
