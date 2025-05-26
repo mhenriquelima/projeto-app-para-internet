@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #505050; margin: 0;
+}
+
+header { 
+    background: linear-gradient(to right, #000000, #353535);
+    color: #ffd503;
+    padding: 30px 0; 
+    text-align: left; 
+    padding-left: 50px;
+    width: 100%;
+    height: 100px;
+    font-family: Castellar;
+}
+
+nav a.active {
+    color: #ffd503;
+    border-bottom: 2px solid #ffd503;
+}
+
+h1 {
+    font-family: Castellar;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+nav {
+    background: #353535; 
+    padding: 10px 0; 
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+nav a:hover {
+    color: #ffd503;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto; 
+    padding: 20px; 
+    background: #353535; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    color:white;
+    height: 200px;
+}
+
+h1, h2 {
+    color: #ffd503;
+}
+
+footer {
+    background: #353535; 
+    color: #ffd503; 
+    text-align: center; 
+    padding: 20px 0; 
+    margin-top: 40px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.btn { 
+    display: inline-block; 
+    padding: 10px 22px; 
+    background: #505050; 
+    color: #fff; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    margin-top: 20px;
+}
+
+.btn:hover { 
+    background: #ffd503; 
+}
+
+.email-link {
+    color: #ffd503;
+    text-decoration: none;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.form-container {
+    margin: 20px;
+    padding: 20px;
+}
+
+.obrigado-container {
+    margin: 20px;
+    padding: 20px;
+}
