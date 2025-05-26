@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelúcia Pou - Loja TemQuaseTudo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            gap: 32px;
+        }
+        .product-image {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-image img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .product-details {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .product-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #222;
+        }
+        .product-rating {
+            color: #f0c14b;
+            font-size: 1.1rem;
+        }
+        .product-price {
+            font-size: 1.7rem;
+            color: #b12704;
+            font-weight: bold;
+        }
+        .product-description {
+            font-size: 1.1rem;
+            color: #333;
+        }
+        .buy-section {
+            margin-top: 24px;
+            background: #fafafa;
+            padding: 18px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            max-width: 320px;
+        }
+        .buy-section button {
+            background: #ffd814;
+            border: 1px solid #fcd200;
+            color: #111;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: background 0.2s;
+        }
+        .buy-section button:hover {
+            background: #f7ca00;
+        }
+        .stock {
+            color: #007600;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                gap: 0;
+            }
+            .buy-section {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product-image">
+            <img src="../imgs/pou.jpg" alt="Pelúcia Pou">
+        </div>
+        <div class="product-details">
+            <div class="product-title">Pelúcia Pou</div>
+            <div class="product-rating">
+                ★★★★☆ (4.9) | 980 avaliações
+            </div>
+            <div class="product-price">R$ 3,00</div>
+            <div class="product-description">
+                Pelúcia do famoso personagem Pou, macia e perfeita para presentear crianças e fãs do jogo. Ideal para decoração e momentos de diversão.
+            </div>
+            <ul>
+                <h1>Especificações:</h1>
+                <li>Altura: 25cm</li>
+                <li>Material: Fibra de poliéster antialérgica</li>
+                <li>Acabamento costurado à mão</li>
+                <li>Indicado para todas as idades</li>
+                <li>Fácil de lavar</li>
+                <li>Produto oficial</li>
+            </ul>
+            <div class="buy-section">
+                <div class="product-price">R$ 3,00</div>
+                <div class="stock">Em estoque</div>
+                <button onclick="adicionarCarrinhoProduto()">Adicionar ao carrinho</button>
+                <button onclick="comprarAgora()">Comprar agora</button>
+            </div>
+        </div>
+    </div>
+<script>
+function adicionarCarrinhoProduto() {
+    // Salva o produto no localStorage
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    const produto = {
+        nome: "Pelúcia Pou",
+        preco: 3.00,
+        quantidade: 1,
+        url: window.location.pathname
+    };
+    // Verifica se já existe no carrinho
+    const existente = carrinho.find(p => p.nome === produto.nome);
+    if (existente) {
+        existente.quantidade += 1;
+    } else {
+        carrinho.push(produto);
+    }
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    // Redireciona para o carrinho
+    window.location.href = "../carrinho.html";
+}
+
+function comprarAgora() {
+    adicionarCarrinhoProduto();
+}
+</script>
+</body>
+</html>

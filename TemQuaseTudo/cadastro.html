@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="styles/login_styles.css">
+</head>
+<body>
+    <div class="cadastro-container">
+        <h2>Cadastro</h2>
+        <form id="cadastroForm">
+            <label for="novoUsername">Novo Usuário:</label>
+            <input type="text" id="novoUsername" name="novoUsername" required><br><br>
+
+            <label for="novaSenha">Nova Senha:</label>
+            <input type="password" id="novaSenha" name="novaSenha" required><br><br>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+        <div class="cadastro-message" id="cadastroMessage"></div>
+        <button type="button" onclick="window.location.href='login.html'">Voltar para Login</button>
+    </div>
+    <script>
+    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const novoUsuario = document.getElementById('novoUsername').value;
+    const novaSenha = document.getElementById('novaSenha').value;
+    const cadastroMessage = document.getElementById('cadastroMessage');
+
+    // Recupera a lista de usuários do localStorage ou cria uma padrão
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [
+        { usuario: "admin", senha: "1234" }
+    ];
+
+    // Verifica se o usuário já existe
+    const existe = usuarios.some(u => u.usuario === novoUsuario);
+
+    if (existe) {
+        cadastroMessage.textContent = "Usuário já existe!";
+        cadastroMessage.style.display = 'block';
+        cadastroMessage.style.color = 'red';
+    } else {
+        usuarios.push({ usuario: novoUsuario, senha: novaSenha });
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        cadastroMessage.textContent = "Cadastro realizado com sucesso!";
+        cadastroMessage.style.display = 'block';
+        cadastroMessage.style.color = 'green';
+        this.reset();
+        setTimeout(function() {
+            window.location.href = 'login.html';
+        }, 1500);
+    }
+});
+</script>
+</body>
+</html>
