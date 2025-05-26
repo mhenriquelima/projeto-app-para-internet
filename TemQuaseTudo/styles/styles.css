@@ -1,0 +1,219 @@
+.produto {
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  padding-bottom: 20px;
+  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.205);
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 160px solid #F84F24;
+  border-left: 1000px solid transparent;
+  z-index: 0;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 70px solid #F84F24;
+  border-right: 300px solid transparent;
+  z-index: 0;
+}
+
+.frasetopo {
+    font-size: 24px;
+    font-weight: bold;
+    padding-right: 200px;
+    padding-top: 30px;
+}
+
+.fraseperfil {
+    position: absolute;
+    padding-top: 65px;
+    padding-right: 25px;
+    text-decoration: none;
+    color: #000;
+    z-index: 1;
+}
+
+.perfil {
+    z-index: 1;
+}
+
+body {
+    background-color: #00000096;
+    margin: 0;
+    padding: 0;
+}
+
+.selecionado {
+    background-color: #eef;
+}
+
+.botao-adicionar {
+    background-color: #0f0;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.ad-button1 {
+    position: absolute;
+    top: 320px;
+    left: 5px;
+    width: 120px;
+    height: 590px;
+    padding: 20px 10px;
+    background-color: #ff0;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 8px;
+    color: #000;
+    font-weight: bold;
+    z-index: 1000;
+    writing-mode: vertical-rl;
+}
+
+.ad-button2 {
+    position: absolute;
+    top: 320px;
+    right: 5px;
+    width: 120px;
+    height: 590px;
+    padding: 20px 10px;
+    background-color: #ff0;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 8px;
+    color: #000;
+    font-weight: bold;
+    z-index: 1000;
+    writing-mode: vertical-rl;
+}
+
+#carrinho {
+    position: absolute;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 10px;
+    background: fixed;
+    background-color: white;
+    width: fit-content; 
+    left: 150px;
+    margin: 30px;
+    margin-top: 30px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.205);
+}
+
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-left: auto;
+    margin-right: 200px;
+    margin-top: 40px;
+}
+
+.barra-pesquisa input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+     background-color: white;
+    color: #fff;
+    font-size: 1em;
+}
+
+button {
+    background-color: #F84F24;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #e03b1f;
+}
+
+.conjunto {
+    display: flex;
+    justify-content: space-between;
+}
+
+.botao-remover {
+    background-color: #f66;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #F84F24;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.produtos {
+    max-width: 100px !important;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.produto {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    text-align: center;
+}
+
+.botao-adicionar {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}

@@ -3,58 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>TemQuaseTudo</title>
-  <style>
-    .produto {
-      border: 1px solid #000;
-      padding: 10px;
-      margin: 5px;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .selecionado {
-      background-color: #eef;
-    }
-
-    .botao-adicionar {
-      background-color: #0f0;
-      border: none;
-      padding: 5px;
-      margin-top: 5px;
-      cursor: pointer;
-    }
-
-    .ad-button {
-      display: block;
-      margin: 10px;
-      padding: 10px;
-      background-color: #ff0;
-      text-decoration: none;
-      text-align: center;
-      border: 1px solid #000;
-      color: #000;
-      font-weight: bold;
-    }
-
-    #carrinho {
-      margin-top: 20px;
-      border: 1px solid #000;
-      padding: 10px;
-    }
-
-    .botao-remover {
-      background-color: #f66;
-      border: none;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-  </style>
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <header>
-    <h1>TemQuaseTudo</h1>
-    <p>imagem aleatória de produtos random</p>
-    <div>Ícone de usuário</div>
+    <img class="TQTlogo" src="imgs/TQTlogo.jpg" alt="Logo TemQuaseTudo" style="width: 300px; height: auto; padding: 10px; align:left;">
+    <p class="frasetopo">Tem de tudo (ou quase)</p>
+  <div>
+    <img src="imgs/usuário.png" alt="Ícone de usuário" style="width: 100px; height: auto; float: right; padding-right: 30px;">
+  </div>
   </header>
 
   <aside>
@@ -65,48 +23,13 @@
   </button>
   <ul id="carrinho-lista" style="list-style: none; padding: 0; margin: 0;"></ul>
 </div>
-<script>
-  document.getElementById('carrinho-botao').onclick = function() {
-    window.location.href = "carrinho.html";
-  };
-
-  function adicionarCarrinho(event, produtoNome) {
-    event.stopPropagation(); // Evita seleção ao clicar no botão
-    const lista = document.getElementById('carrinho-lista');
-
-    // Verifica se o produto já está no carrinho
-    let jaAdicionado = false;
-    for (let item of lista.children) {
-      if (item.dataset.nome === produtoNome) {
-        jaAdicionado = true;
-        break;
-      }
-    }
-    if (jaAdicionado) return;
-
-    const item = document.createElement('li');
-    item.textContent = produtoNome;
-    item.dataset.nome = produtoNome;
-
-    const botaoRemover = document.createElement('button');
-    botaoRemover.textContent = 'Remover';
-    botaoRemover.className = 'botao-remover';
-    botaoRemover.onclick = function () {
-      lista.removeChild(item);
-    };
-
-    item.appendChild(botaoRemover);
-    lista.appendChild(item);
-  }
-</script>
-
       <main>
     <section>
       <input type="text" placeholder="Barra de pesquisa">
       <button>🔍</button>
     </section>
 
-    <a class="ad-button" href="http://127.0.0.1:5501/OnoContábil/html.html" target="_blank">Ad Ono Contábil</a>
+    <a class="ad-button1" href="http://127.0.0.1:5501/OnoContábil/html.html" target="_blank">Ad Ono Contábil</a>
   </aside>
 
     <section>
@@ -128,41 +51,11 @@
     <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 4')">🟩</button>
   </div>
 </section>
-<script>
-  function irParaProduto(event, url) {
-    // Evita redirecionar se clicar no botão de adicionar
-    if (event.target.classList.contains('botao-adicionar')) return;
-    window.location.href = url;
-  }
-</script>
+
   </main>
 
   <aside>
-    <a class="ad-button" href="https://academiafulano.exemplo" target="_blank">Ad Fulano Academia</a>
+    <a class="ad-button2" href="https://academiafulano.exemplo" target="_blank">Ad Fulano Academia</a>
   </aside>
-
-  <script>
-    function selecionarProduto(elemento) {
-      elemento.classList.toggle('selecionado');
-    }
-
-    function adicionarCarrinho(event, produtoNome) {
-      event.stopPropagation(); // Evita seleção ao clicar no botão
-      const lista = document.getElementById('carrinho-lista');
-
-      const item = document.createElement('li');
-      item.textContent = produtoNome;
-
-      const botaoRemover = document.createElement('button');
-      botaoRemover.textContent = 'Remover';
-      botaoRemover.className = 'botao-remover';
-      botaoRemover.onclick = function () {
-        lista.removeChild(item);
-      };
-
-      item.appendChild(botaoRemover);
-      lista.appendChild(item);
-    }
-  </script>
 </body>
 </html>
