@@ -83,6 +83,9 @@ body {
     height: 720px;
     padding: 20px 10px;
     background-color: #ff0;
+    background-image: url('../imgs/ONO_ad.png');
+    background-size: cover;
+    background-position: center 4%;
     text-decoration: none;
     text-align: center;
     border: 1px solid #000;
@@ -102,6 +105,9 @@ body {
     height: 720px;
     padding: 20px 10px;
     background-color: #ff0;
+    background-image: url('../imgs/fulano_ad.png');
+    background-size: cover;
+    background-position: center 10px;
     text-decoration: none;
     text-align: center;
     border: 1px solid #000;
