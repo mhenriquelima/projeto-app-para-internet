@@ -12,12 +12,12 @@
     <p class="frasetopo">Tem de tudo (ou quase)</p>
   <div class="perfil">
     <img src="imgs/usuário.png" alt="Ícone de usuário" style="width: 100px; height: auto; float: right; padding-right: 30px;">
-    <a class="fraseperfil" href="login.html">Perfil não logado</a>
+    <a class="fraseperfil">Bem-vindo(a)</a>
   </div>
   </header>
 
   <aside>
-<a href="login.html">
+<a href="carrinho.html">
     <div class="conjunto">
     <div id="carrinho">
   <button id="carrinho-botao" style="background: none; border: none; cursor: pointer; font-size: 1.5em; display: flex; align-items: center; margin-bottom: 10px;">
@@ -38,26 +38,26 @@
     <a class="ad-button1" href="http://127.0.0.1:5501/OnoContábil/html.html" target="_blank">Ad Ono Contábil</a>
   </aside>
     <section class="produtos">
-      <h2>Produtos:</h2>
-      <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="Coxinha da Salgateria Andrade">
+  <h2>Produtos:</h2>
+  <div class="produto" onclick="irParaProduto(event, 'produtos/produto1.html')" data-nome="Coxinha da Salgateria Andrade">
     Coxinha da Salgateria Andrade - R$ 2,50
     <img src="imgs/coxinha.jpg" alt="Coxinha" style="width: 250px; height: auto;">
     <button class="botao-adicionar1" onclick="adicionarCarrinho(event, 'Coxinha da Salgateria Andrade')">🟩</button>
   </div>
-  <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="PC Gamer Aorus">
+  <div class="produto" onclick="irParaProduto(event, 'produtos/produto2.html')" data-nome="PC Gamer Aorus">
     PC Gamer Aorus - R$ 2,00
     <img src="imgs/pcgamer.jpg" alt="PC Gamer" style="width: 150px; height: auto;">
     <button class="botao-adicionar2" onclick="adicionarCarrinho(event, 'PC Gamer Aorus')">🟩</button>
   </div>
-  <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="Whey Fulanos Academy">
+  <div class="produto" onclick="irParaProduto(event, 'produtos/produto3.html')" data-nome="Whey Fulanos Academy">
     Whey Fulanos Academy - R$ 1,50
     <img src="imgs/whey.jpg" alt="Whey Protein" style="width: 100px; height: auto;">
     <button class="botao-adicionar3" onclick="adicionarCarrinho(event, 'Whey Fulanos Academy')">🟩</button>
   </div>
-  <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="Pou de Pelucia">
-    Pou de Pelucia - R$ 3,00
+  <div class="produto" onclick="irParaProduto(event, 'produtos/produto4.html')" data-nome="Pou de Pelúcia">
+    Pou de Pelúcia - R$ 3,00
     <img src="imgs/pou.jpg" alt="Pou de Pelucia" style="width: 200px; height: auto;">
-    <button class="botao-adicionar4" onclick="adicionarCarrinho(event, 'Pou de Pelucia')">🟩</button>
+    <button class="botao-adicionar4" onclick="adicionarCarrinho(event, 'Pou de Pelúcia')">🟩</button>
   </div>
 </section>
   </main>
