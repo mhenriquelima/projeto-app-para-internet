@@ -8,14 +8,17 @@
 </head>
 <body>
   <header>
-    <img class="TQTlogo" src="imgs/TQTlogo.jpg" alt="Logo TemQuaseTudo" style="width: 300px; height: auto; padding: 10px; align:left;">
+    <img class="TQTlogo" src="imgs/TQTlogo.jpg" alt="Logo TemQuaseTudo" style="width: 300px; height: auto; padding: 10px; margin-left: 100px; align:left;">
     <p class="frasetopo">Tem de tudo (ou quase)</p>
-  <div>
+  <div class="perfil">
     <img src="imgs/usuário.png" alt="Ícone de usuário" style="width: 100px; height: auto; float: right; padding-right: 30px;">
+    <a class="fraseperfil" href="login.html">Perfil não logado</a>
   </div>
   </header>
 
   <aside>
+<a href="login.html">
+    <div class="conjunto">
     <div id="carrinho">
   <button id="carrinho-botao" style="background: none; border: none; cursor: pointer; font-size: 1.5em; display: flex; align-items: center; margin-bottom: 10px;">
     <span style="font-size: 2em; margin-right: 8px;">🛒</span>
@@ -23,37 +26,41 @@
   </button>
   <ul id="carrinho-lista" style="list-style: none; padding: 0; margin: 0;"></ul>
 </div>
-      <main>
-    <section>
-      <input type="text" placeholder="Barra de pesquisa">
-      <button>🔍</button>
+</a>
+    <main>
+    <section class="barra-pesquisa">
+      <input type="text" placeholder="Barra de pesquisa"> 
+      <button class="botao-pesquisa">🔍</button>
     </section>
+    </main>
+    </div>
 
     <a class="ad-button1" href="http://127.0.0.1:5501/OnoContábil/html.html" target="_blank">Ad Ono Contábil</a>
   </aside>
-
-    <section>
-  <h2>Produtos:</h2>
-  <div class="produto" onclick="irParaProduto(event, 'produtos/produto1.html')" data-nome="Produto 1">
+    <section class="produtos">
+      <h2>Produtos:</h2>
+      <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="Coxinha da Salgateria Andrade">
     Coxinha da Salgateria Andrade - R$ 2,50
-    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 1')">🟩</button>
+    <img src="imgs/coxinha.jpg" alt="Coxinha" style="width: 250px; height: auto;">
+    <button class="botao-adicionar1" onclick="adicionarCarrinho(event, 'Coxinha da Salgateria Andrade')">🟩</button>
   </div>
-  <div class="produto" onclick="irParaProduto(event, 'produtos/produto2.html')" data-nome="Produto 2">
+  <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="PC Gamer Aorus">
     PC Gamer Aorus - R$ 2,00
-    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 2')">🟩</button>
+    <img src="imgs/pcgamer.jpg" alt="PC Gamer" style="width: 150px; height: auto;">
+    <button class="botao-adicionar2" onclick="adicionarCarrinho(event, 'PC Gamer Aorus')">🟩</button>
   </div>
-  <div class="produto" onclick="irParaProduto(event, 'produtos/produto3.html')" data-nome="Produto 3">
+  <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="Whey Fulanos Academy">
     Whey Fulanos Academy - R$ 1,50
-    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 3')">🟩</button>
+    <img src="imgs/whey.jpg" alt="Whey Protein" style="width: 100px; height: auto;">
+    <button class="botao-adicionar3" onclick="adicionarCarrinho(event, 'Whey Fulanos Academy')">🟩</button>
   </div>
-  <div class="produto" onclick="irParaProduto(event, 'produtos/produto4.html')" data-nome="Produto 4">
+  <div class="produto" onclick="irParaProduto(event, 'login.html')" data-nome="Pou de Pelucia">
     Pou de Pelucia - R$ 3,00
-    <button class="botao-adicionar" onclick="adicionarCarrinho(event, 'Produto 4')">🟩</button>
+    <img src="imgs/pou.jpg" alt="Pou de Pelucia" style="width: 200px; height: auto;">
+    <button class="botao-adicionar4" onclick="adicionarCarrinho(event, 'Pou de Pelucia')">🟩</button>
   </div>
 </section>
-
   </main>
-
   <aside>
     <a class="ad-button2" href="https://academiafulano.exemplo" target="_blank">Ad Fulano Academia</a>
   </aside>

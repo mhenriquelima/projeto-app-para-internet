@@ -7,46 +7,49 @@
 }
 
 header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: white;
-  padding-bottom: 20px;
-  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.205);
-  overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    padding-bottom: 20px;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.205);
+    overflow: hidden;
 }
 
 header::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-top: 160px solid #F84F24;
-  border-left: 1000px solid transparent;
-  z-index: 0;
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 160px solid #F84F24;
+    border-left: 1000px solid transparent;
+    z-index: 0;
 }
 
 header::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 70px solid #F84F24;
-  border-right: 300px solid transparent;
-  z-index: 0;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 70px solid #F84F24;
+    border-right: 300px solid transparent;
+    z-index: 0;
 }
 
 .frasetopo {
     font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     padding-right: 200px;
     padding-top: 30px;
+    text-decoration: underline;
+    text-decoration-color: #F84F24;
 }
 
 .fraseperfil {
@@ -72,20 +75,12 @@ body {
     background-color: #eef;
 }
 
-.botao-adicionar {
-    background-color: #0f0;
-    border: none;
-    padding: 5px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-
 .ad-button1 {
     position: absolute;
-    top: 320px;
-    left: 5px;
+    top: 180px;
+    left: 10px;
     width: 120px;
-    height: 590px;
+    height: 720px;
     padding: 20px 10px;
     background-color: #ff0;
     text-decoration: none;
@@ -96,14 +91,15 @@ body {
     font-weight: bold;
     z-index: 1000;
     writing-mode: vertical-rl;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.205);
 }
 
 .ad-button2 {
     position: absolute;
-    top: 320px;
-    right: 5px;
+    top: 180px;
+    right: 10px;
     width: 120px;
-    height: 590px;
+    height: 720px;
     padding: 20px 10px;
     background-color: #ff0;
     text-decoration: none;
@@ -114,6 +110,7 @@ body {
     font-weight: bold;
     z-index: 1000;
     writing-mode: vertical-rl;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.205);
 }
 
 #carrinho {
@@ -128,6 +125,9 @@ body {
     margin: 30px;
     margin-top: 30px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.205);
+    text-decoration: underline;
+    text-decoration-color: #F84F24;
+    text-decoration-thickness: 4px;
 }
 
 .barra-pesquisa {
@@ -142,7 +142,7 @@ body {
 .barra-pesquisa input {
     flex: 1;
     padding: 10px 15px;
-    border: none;
+    border: 2px solid #F84F24;
     border-radius: 30px 0 0 30px;
     outline: none;
      background-color: white;
@@ -150,7 +150,7 @@ body {
     font-size: 1em;
 }
 
-button {
+.botao-pesquisa {
     background-color: #F84F24;
     border: none;
     padding: 10px 20px;
@@ -161,7 +161,7 @@ button {
     transition: background 0.3s;
 }
 
-button:hover {
+.botao-pesquisa:hover {
     background-color: #e03b1f;
 }
 
@@ -177,43 +177,84 @@ button:hover {
     cursor: pointer;
 }
 
-button {
-    background-color: #F84F24;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 0 30px 30px 0;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
 .produtos {
-    max-width: 100px !important;
-    margin: 0 auto;
-    display: grid;
+    margin-left: 220px;
+    margin-top: 150px;
+    color: #F84F24;
+    display: flex;
     gap: 20px;
-    padding: 20px;
+    flex-wrap: nowrap;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
 }
-
 
 .produto {
     background: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.205);
     cursor: pointer;
-    padding: 20px;
+    margin-top: 100px;
+    padding: 80px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80px;
+    height: 120px;
+    width: 120px;
     text-align: center;
+    color: #000;
+    flex-direction: column;
+    font-size: 16px;
 }
 
-.botao-adicionar {
-    background: none;
+
+
+.botao-adicionar1 {
+    background-color: #0f0;
     border: none;
-    font-size: 30px;
+    padding: 5px;
+    margin-top: 15px;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+.botao-adicionar2 {
+    background-color: #0f0;
+    border: none;
+    padding: 5px;
+    margin-top: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.botao-adicionar3 {
+    background-color: #0f0;
+    border: none;
+    padding: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.botao-adicionar4 {
+    background-color: #0f0;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.botao-adicionar1:hover {
+    background-color: rgba(0, 204, 0, 0.466);
+}
+
+.botao-adicionar2:hover {
+    background-color: rgba(0, 204, 0, 0.466);
+}
+
+.botao-adicionar3:hover {
+    background-color: rgba(0, 204, 0, 0.466);
+}
+
+.botao-adicionar4:hover {
+    background-color: rgba(0, 204, 0, 0.466);
 }
