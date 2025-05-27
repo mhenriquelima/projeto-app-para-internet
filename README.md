@@ -33,10 +33,35 @@ Este repositório contém dois sistemas web:
 3. Acesse `TemQuaseTudo/html.html` para a loja virtual.
 4. Para testar login/cadastro, use a tela de login/cadastro da loja.
 
-## Funcionalidades
+## Funcionalidades — Ono Contábil
 
-- **Ono Contábil**: Apresentação institucional, formulário de contato, informações de serviços e parcerias.
-- **TemQuaseTudo**: Cadastro e login de usuários (armazenados no localStorage), listagem de produtos, carrinho de compras, páginas de detalhes dos produtos.
+| Funcionalidade                | Descrição                                                                 |
+|------------------------------|---------------------------------------------------------------------------|
+| Apresentação Institucional   | Página inicial com informações sobre a empresa e sua missão.              |
+| Serviços Oferecidos          | Lista detalhada dos serviços contábeis disponíveis.                       |
+| Formulário de Orçamento      | Permite que clientes solicitem orçamento de serviços online.              |
+| Página de Agradecimento      | Confirmação visual após envio de solicitação de orçamento.                |
+| Contato                      | Informações de endereço, telefone e e-mail para contato direto.           |
+| Parcerias                    | Seção dedicada a empresas parceiras, com links e logos.                   |
+| Navegação Dinâmica           | Menu de navegação para alternar entre seções sem recarregar a página.     |
+
+Essas funcionalidades garantem uma experiência completa para visitantes e potenciais clientes da Ono Contábil.
+
+## Funcionalidades — TemQuaseTudo
+
+| Funcionalidade              | Descrição                                                                 |
+|----------------------------|---------------------------------------------------------------------------|
+| Cadastro de Usuário        | Permite que novos usuários criem uma conta na loja virtual.               |
+| Login/Logout               | Autenticação de usuários para acesso a funcionalidades exclusivas.         |
+| Listagem de Produtos       | Exibe os produtos disponíveis para compra, com imagens e preços.          |
+| Página de Detalhes         | Página individual com informações detalhadas de cada produto.             |
+| Carrinho de Compras        | Adiciona, remove e atualiza a quantidade de produtos no carrinho.         |
+| Finalização de Compra      | Simulação de processo de compra (sem integração real de pagamento).       |
+| Barra de Pesquisa          | Permite pesquisar produtos na loja.                                       |
+| Anúncios/Parcerias         | Exibição de banners de parceiros e anúncios na interface.                 |
+| Navegação entre páginas    | Links e menus para facilitar a navegação entre as seções do site.         |
+
+Essas funcionalidades proporcionam uma experiência completa de navegação e compra simulada na loja TemQuaseTudo.
 
 ## Observações
 - Não há backend, todo armazenamento é feito no navegador (localStorage).
