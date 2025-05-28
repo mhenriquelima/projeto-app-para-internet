@@ -56,6 +56,7 @@ header::before {
     position: absolute;
     padding-top: 65px;
     padding-right: 25px;
+    margin-left: 5px;
     text-decoration: none;
     color: #000;
     z-index: 1;
@@ -88,7 +89,6 @@ body {
     background-position: center 4%;
     text-decoration: none;
     text-align: center;
-    border: 1px solid #000;
     border-radius: 8px;
     color: #000;
     font-weight: bold;
@@ -110,7 +110,6 @@ body {
     background-position: center 10px;
     text-decoration: none;
     text-align: center;
-    border: 1px solid #000;
     border-radius: 8px;
     color: #000;
     font-weight: bold;
@@ -121,7 +120,6 @@ body {
 
 #carrinho {
     position: absolute;
-    border: 1px solid #000;
     border-radius: 8px;
     padding: 10px;
     background: fixed;
