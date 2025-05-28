@@ -56,14 +56,14 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Itens do carrinho serão inseridos aqui -->
+        
     </tbody>
 </table>
 <div class="total" id="cart-total">Total: R$ 0,00</div>
 <button class="checkout-btn">Finalizar Compra</button>
 </div>
 <script>
-    // Carrinho centralizado no localStorage
+    
     let cart = JSON.parse(localStorage.getItem('carrinho')) || [];
 
     function saveCart() {
@@ -97,7 +97,7 @@
 
     function adicionarCarrinho(event, produtoNome, preco) {
         if (event) event.stopPropagation();
-        // Verifica se já existe no carrinho
+        
         const idx = cart.findIndex(item => item.nome === produtoNome);
         if (idx > -1) {
             cart[idx].quantidade += 1;
@@ -126,8 +126,6 @@
     function selecionarProduto(elemento) {
         elemento.classList.toggle('selecionado');
     }
-
-    // Inicializa carrinho da memória localStorage
     renderCart();
 </script>
 </body>

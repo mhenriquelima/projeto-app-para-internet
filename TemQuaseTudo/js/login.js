@@ -9,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if (successMessage) successMessage.style.display = 'none';
     if (cadastroMessage) cadastroMessage.style.display = 'none';
 
-    // LOGIN
     if (loginForm) {
         loginForm.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -17,7 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Recupera usuários do localStorage ou cria padrão
             let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [
                 { usuario: "admin", senha: "1234" }
             ];
@@ -37,7 +35,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // CADASTRO
     if (cadastroForm) {
         cadastroForm.addEventListener('submit', function(event) {
             event.preventDefault();

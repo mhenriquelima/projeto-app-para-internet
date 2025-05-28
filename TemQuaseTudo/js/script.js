@@ -3,10 +3,9 @@
   };
 
   function adicionarCarrinho(event, produtoNome) {
-    event.stopPropagation(); // Evita seleção ao clicar no botão
+    event.stopPropagation(); 
     const lista = document.getElementById('carrinho-lista');
 
-    // Verifica se o produto já está no carrinho
     let jaAdicionado = false;
     for (let item of lista.children) {
       if (item.dataset.nome === produtoNome) {
@@ -32,7 +31,6 @@
   }
 
     function irParaProduto(event, url) {
-    // Evita redirecionar se clicar no botão de adicionar
     if (event.target.classList.contains('botao-adicionar')) return;
     window.location.href = url;
   }
@@ -42,7 +40,7 @@
     }
 
     function adicionarCarrinho(event, produtoNome) {
-      event.stopPropagation(); // Evita seleção ao clicar no botão
+      event.stopPropagation(); 
       const lista = document.getElementById('carrinho-lista');
 
       const item = document.createElement('li');

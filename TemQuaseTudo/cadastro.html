@@ -29,12 +29,10 @@
     const novaSenha = document.getElementById('novaSenha').value;
     const cadastroMessage = document.getElementById('cadastroMessage');
 
-    // Recupera a lista de usuários do localStorage ou cria uma padrão
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [
         { usuario: "admin", senha: "1234" }
     ];
 
-    // Verifica se o usuário já existe
     const existe = usuarios.some(u => u.usuario === novoUsuario);
 
     if (existe) {
