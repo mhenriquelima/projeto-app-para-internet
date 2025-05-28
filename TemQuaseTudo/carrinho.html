@@ -45,79 +45,90 @@
             </div>
         </section>
         <h2>Itens no Carrinho</h2>
-        <table id="cart-table">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Subtotal</th>
-                    <th>Remover</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Itens do carrinho serão inseridos aqui -->
-            </tbody>
-        </table>
-        <div class="total" id="cart-total">Total: R$ 0,00</div>
-        <button class="checkout-btn">Finalizar Compra</button>
-    </div>
-    <script>
-        // Carrinho armazenado em memória (pode ser adaptado para localStorage)
-        let cart = [];
+<table id="cart-table">
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Itens do carrinho serão inseridos aqui -->
+    </tbody>
+</table>
+<div class="total" id="cart-total">Total: R$ 0,00</div>
+<button class="checkout-btn">Finalizar Compra</button>
+</div>
+<script>
+    // Carrinho centralizado no localStorage
+    let cart = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-        function renderCart() {
-            const tbody = document.querySelector("#cart-table tbody");
-            tbody.innerHTML = "";
-            let total = 0;
-            cart.forEach((item, idx) => {
-                const subtotal = item.preco * item.quantidade;
-                total += subtotal;
-                const tr = document.createElement("tr");
-                tr.innerHTML = `
-                    <td>${item.nome}</td>
-                    <td>R$ ${item.preco.toFixed(2)}</td>
-                    <td>
-                        <input type="number" min="1" value="${item.quantidade}" style="width:50px" onchange="updateQuantity(${idx}, this.value)">
-                    </td>
-                    <td>R$ ${subtotal.toFixed(2)}</td>
-                    <td><button class="remove-btn" onclick="removeItem(${idx})">Remover</button></td>
-                `;
-                tbody.appendChild(tr);
-            });
-            document.getElementById("cart-total").textContent = "Total: R$ " + total.toFixed(2);
+    function saveCart() {
+        localStorage.setItem('carrinho', JSON.stringify(cart));
+    }
+
+    function renderCart() {
+        const tbody = document.querySelector("#cart-table tbody");
+        tbody.innerHTML = "";
+        let total = 0;
+        if (cart.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;">O carrinho está vazio.</td></tr>`;
         }
+        cart.forEach((item, idx) => {
+            const subtotal = item.preco * item.quantidade;
+            total += subtotal;
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${item.nome}</td>
+                <td>R$ ${item.preco.toFixed(2)}</td>
+                <td>
+                    <input type="number" min="1" value="${item.quantidade}" style="width:50px" onchange="updateQuantity(${idx}, this.value)">
+                </td>
+                <td>R$ ${subtotal.toFixed(2)}</td>
+                <td><button class="remove-btn" onclick="removeItem(${idx})">Remover</button></td>
+            `;
+            tbody.appendChild(tr);
+        });
+        document.getElementById("cart-total").textContent = "Total: R$ " + total.toFixed(2);
+    }
 
-        function adicionarCarrinho(event, produtoNome, preco) {
-            event.stopPropagation();
-            // Verifica se já existe no carrinho
-            const idx = cart.findIndex(item => item.nome === produtoNome);
-            if (idx > -1) {
-                cart[idx].quantidade += 1;
-            } else {
-                cart.push({ nome: produtoNome, preco: preco, quantidade: 1 });
-            }
-            renderCart();
+    function adicionarCarrinho(event, produtoNome, preco) {
+        if (event) event.stopPropagation();
+        // Verifica se já existe no carrinho
+        const idx = cart.findIndex(item => item.nome === produtoNome);
+        if (idx > -1) {
+            cart[idx].quantidade += 1;
+        } else {
+            cart.push({ nome: produtoNome, preco: preco, quantidade: 1 });
         }
-
-        function removeItem(index) {
-            cart.splice(index, 1);
-            renderCart();
-        }
-
-        function updateQuantity(index, value) {
-            const qty = parseInt(value);
-            if (qty > 0) {
-                cart[index].quantidade = qty;
-                renderCart();
-            }
-        }
-
-        function selecionarProduto(elemento) {
-            elemento.classList.toggle('selecionado');
-        }
-
+        saveCart();
         renderCart();
-    </script>
+    }
+
+    function removeItem(index) {
+        cart.splice(index, 1);
+        saveCart();
+        renderCart();
+    }
+
+    function updateQuantity(index, value) {
+        const qty = parseInt(value);
+        if (qty > 0) {
+            cart[index].quantidade = qty;
+            saveCart();
+            renderCart();
+        }
+    }
+
+    function selecionarProduto(elemento) {
+        elemento.classList.toggle('selecionado');
+    }
+
+    // Inicializa carrinho da memória localStorage
+    renderCart();
+</script>
 </body>
 </html>

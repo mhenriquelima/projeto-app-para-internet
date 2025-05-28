@@ -11,6 +11,16 @@
             margin: 0;
             padding: 0;
         }
+        .voltar {
+        height: 70px;
+        width: 200px;
+        font-size: 16px;
+        background: #F84F24;
+        color: white;
+        }
+        .voltar:hover {
+            background: #d43c1f;
+        }
         .container {
             max-width: 1100px;
             margin: 30px auto;
@@ -33,6 +43,7 @@
             max-height: 400px;
             border-radius: 8px;
             border: 1px solid #ddd;
+            margin-right: 200px;
         }
         .product-details {
             flex: 2;
@@ -100,6 +111,7 @@
 </head>
 <body>
     <div class="container">
+        <button class="voltar" onclick="window.location.href='../html2.html'">← Voltar para a loja</button>
         <div class="product-image">
             <img src="../imgs/pou.jpg" alt="Pelúcia Pou">
         </div>
@@ -124,14 +136,10 @@
             <div class="buy-section">
                 <div class="product-price">R$ 3,00</div>
                 <div class="stock">Em estoque</div>
-                <button onclick="adicionarCarrinhoProduto()">Adicionar ao carrinho</button>
                 <button onclick="comprarAgora()">Comprar agora</button>
-            </div>
-        </div>
-    </div>
+</div>
 <script>
-function adicionarCarrinhoProduto() {
-    // Salva o produto no localStorage
+function comprarAgora() {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     const produto = {
         nome: "Pelúcia Pou",
@@ -139,7 +147,6 @@ function adicionarCarrinhoProduto() {
         quantidade: 1,
         url: window.location.pathname
     };
-    // Verifica se já existe no carrinho
     const existente = carrinho.find(p => p.nome === produto.nome);
     if (existente) {
         existente.quantidade += 1;
@@ -147,12 +154,7 @@ function adicionarCarrinhoProduto() {
         carrinho.push(produto);
     }
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    // Redireciona para o carrinho
     window.location.href = "../carrinho.html";
-}
-
-function comprarAgora() {
-    adicionarCarrinhoProduto();
 }
 </script>
 </body>
