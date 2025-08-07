@@ -29,12 +29,12 @@ function updateContent(section) {
             <h2>Lojas Parceiras</h2>
             <p class="parceria1">
                 <a href="http://127.0.0.1:5501/TemQuaseTudo/html.html" style="text-decoration: none;">
-                    <img src="../TemQuaseTudo/imgs/TQTlogo.jpg" alt="Tem Quase Tudo logo" width="200px" style="border:
+                    <img src="imgs/TQTlogo.jpg" alt="Tem Quase Tudo logo" width="200px" style="border:
             none; cursor: pointer;"></a><br>
             </p>
             <p class="parceria2">
                 <a href="http://127.0.0.1:5501/TemQuaseTudo/html.html" style="text-decoration: none;">
-                    <img src="../OnoContábil/imgs/Fulanologo.jpg" alt="Fulano Academia" width="200px" style="border:
+                    <img src="imgs/Fulanologo.jpg" alt="Fulano Academia" width="200px" style="border:
             none; cursor: pointer;"></a><br>
             </p>
             `
